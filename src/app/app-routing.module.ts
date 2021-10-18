@@ -6,7 +6,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductsComponent } from './components/products/products.component';
 import { PruebasComponent } from './components/pruebas/pruebas.component';
-
+import {SharedModule} from './shared/shared.module';
 const routes: Routes = [
   {
     path: '',
@@ -33,6 +33,9 @@ const routes: Routes = [
         path: 'contact', component: ContactComponent
       }
     ]
+  },
+  {
+    path: 'admin', loadChildren: () => import('./admin/admin.module').then(mod => mod.AdminModule)
   }
   ,
   {
@@ -44,7 +47,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     preloadingStrategy: PreloadAllModules
-  })],
+  }), SharedModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

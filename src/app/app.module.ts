@@ -15,6 +15,9 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { LayoutComponent } from './components/layout/layout.component';
 import {SharedModule} from './shared/shared.module';
 import {CoreModule} from './core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,10 @@ import {CoreModule} from './core/core.module';
     FormsModule,
     HomeModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
